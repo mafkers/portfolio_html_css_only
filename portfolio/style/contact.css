@@ -1,0 +1,110 @@
+/* Contact Header */
+.contact-header {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 4rem auto;
+}
+
+.contact-header h1 {
+    margin-bottom: 1rem;
+}
+
+.contact-header p {
+    color: var(--text-light);
+    font-size: 1.2rem;
+}
+
+/* Contact Cards */
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2.5rem;
+}
+
+.contact-card {
+    text-align: center;
+    padding: 2.5rem;
+    background-color: var(--accent-bg);
+    border-radius: 1rem;
+    box-shadow: var(--card-shadow);
+    transition: all 0.3s ease;
+}
+
+.contact-card:hover {
+    transform: translateY(-8px);
+    background-color: var(--background);
+}
+
+.contact-card i {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    transition: transform 0.3s ease;
+}
+
+.contact-card:hover i {
+    transform: scale(1.15);
+}
+
+/* Social Connect */
+.social-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2.5rem;
+}
+
+.social-card {
+    text-align: center;
+    padding: 2.5rem;
+    background-color: var(--accent-bg);
+    border-radius: 1rem;
+    box-shadow: var(--card-shadow);
+    text-decoration: none;
+    color: var(--text-color);
+    transition: all 0.4s ease;
+    border: 1px solid var(--border-color);
+    overflow: hidden;
+    position: relative;
+}
+
+.social-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    background: linear-gradient(to bottom, rgba(59, 130, 246, 0.1), transparent);
+    transition: height 0.5s ease;
+    z-index: 0;
+}
+
+.social-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--hover-shadow);
+    background-color: var(--background);
+    border-color: transparent;
+}
+
+.social-card:hover::before {
+    height: 100%;
+}
+
+.social-card i, .social-card h3, .social-card p {
+    position: relative;
+    z-index: 1;
+}
+
+.social-card i {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+    .contact-card,
+    .social-card {
+        padding: 1.5rem;
+    }
+}

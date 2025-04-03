@@ -1,0 +1,147 @@
+/* About Page */
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 5rem;
+    align-items: center;
+}
+
+.about-image {
+    width: 100%;
+    border-radius: 1rem;
+    box-shadow: var(--card-shadow);
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.about-image:hover {
+    transform: scale(1.02) rotate(1deg);
+    box-shadow: var(--hover-shadow);
+}
+
+.about-text h1 {
+    margin-bottom: 1.5rem;
+}
+
+.about-text p {
+    color: var(--text-light);
+    font-size: 1.1rem;
+}
+
+/* Timeline Section */
+.timeline-grid {
+    display: grid;
+    gap: 2.5rem;
+    margin-top: 3rem;
+}
+
+.timeline-item {
+    display: flex;
+    align-items: center;
+    padding: 2.5rem;
+    background-color: var(--accent-bg);
+    border-radius: 1rem;
+    box-shadow: var(--card-shadow);
+    transition: transform 0.3s ease;
+    border-left: 4px solid var(--primary-color);
+}
+
+.timeline-item:hover {
+    transform: translateX(10px);
+    background-color: var(--background);
+}
+
+.timeline-logo {
+    margin-right: 2rem;
+    flex-shrink: 0;
+}
+
+.timeline-logo img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.timeline-item:hover .timeline-logo img {
+    transform: scale(1.1);
+}
+
+.timeline-content {
+    flex-grow: 1;
+}
+
+.timeline-content h3 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.timeline-content h4 {
+    margin-bottom: 0.5rem;
+    font-size: 1.3rem;
+}
+
+/* Hobbies Section */
+.hobbies-grid, .facts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 2.5rem;
+}
+
+.hobby-card, .fact-card {
+    text-align: center;
+    padding: 2rem;
+    background-color: var(--accent-bg);
+    border-radius: 1rem;
+    box-shadow: var(--card-shadow);
+    transition: all 0.3s ease;
+}
+
+.hobby-card:hover, .fact-card:hover {
+    transform: translateY(-8px);
+    background-color: var(--background);
+}
+
+.hobby-card i, .fact-card i {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .about-content {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    .about-image {
+        max-width: 300px;
+        margin: 0 auto;
+    }
+    
+    .timeline-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .timeline-logo {
+        margin-right: 0;
+        margin-bottom: 1.5rem;
+    }
+    
+    .timeline-logo img {
+        width: 50px;
+        height: 50px;
+    }
+}
+
+@media (max-width: 480px) {
+    .timeline-item,
+    .hobby-card,
+    .fact-card {
+        padding: 1.5rem;
+    }
+}
